@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import styles from './index.module.css';
 
-// console.log("styles", styles)
-
 const FilmList = ({ films, title }) => {
   return (
     <div>
@@ -102,6 +100,7 @@ const Parent = () => {
     </div>
   );
 }
+
 // ДОМАШНЕЕ ЗАДАНИЕ ПО МЕТОДИЧКЕ 
 
 const Message = ({ text, title }) => {
@@ -120,7 +119,6 @@ const App = () => {
 
   return (
     <div >
-
       {/* Передаем пропсы в дочерние компоненты */}
       <Message title={title} text={text} />
     </div>
