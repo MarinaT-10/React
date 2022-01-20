@@ -1,52 +1,52 @@
 .parent {
-    width: 600px;
-    margin: 15px;
-    text-align: center;
-    border: 3px solid gold;
-  }
-  .classcomp {
-    margin: 15px;
-    min-height: 80px;
-    width: 500px;
-    border: 2px solid red;
-    background-color: rgb(248, 227, 105);
-  }
-  
-  .funccomp {
-    margin: 15px;
-    min-height: 80px;
-    width: 500px;
-    border: 2px solid green;
-    background-color: rgb(248, 227, 105);
-  }
-  
-  .test-red {
-    color: red;
-    padding: 5px;
-  }
-  
-  .test-green {
-    color: green;
-    padding: 5px;
-  }
-  
-  .btn {
-    margin-bottom: 20px;
-    color: red;
-    border: 1px solid red;
-    padding: 10px;
-  }
+  width: 600px;
+  margin: 15px;
+  text-align: center;
+  border: 3px solid gold;
+}
+.classcomp {
+  margin: 15px;
+  min-height: 80px;
+  width: 500px;
+  border: 2px solid red;
+  background-color: rgb(248, 227, 105);
+}
 
-  .message {
-    margin: 15px;
-    padding: 15px;
-      width: 700px;
-      min-height: 200px;
-      border: 3px solid red;
-  }
+.funccomp {
+  margin: 15px;
+  min-height: 80px;
+  width: 500px;
+  border: 2px solid green;
+  background-color: rgb(248, 227, 105);
+}
 
-  .text {
-      border: 1px solid black;
-      padding: 10px;
-      background-color: darkgray;
-  }
+.test-red {
+  color: red;
+  padding: 5px;
+}
+
+.test-green {
+  color: green;
+  padding: 5px;
+}
+
+.btn {
+  margin-bottom: 20px;
+  color: red;
+  border: 1px solid red;
+  padding: 10px;
+}
+
+.message {
+  margin: 15px;
+  padding: 15px;
+  width: 700px;
+  min-height: 200px;
+  border: 3px solid red;
+}
+
+.text {
+  border: 1px solid black;
+  padding: 10px;
+  background-color: darkgray;
+}
