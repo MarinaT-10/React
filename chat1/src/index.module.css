@@ -1,49 +1,6 @@
-.app {
-  width: 600px;
-  margin: 15px;
-  min-height: 80vh;
-  border: 3px solid gold;
-  
-}
-
-.apptitle {
-  text-align: center;
-  color: red;
-}
-.message {
-  margin: 15px;
-  padding: 5px;
-  min-height: 60vh;
-  width: 560px;
-  border: 2px solid red;
-  background-color: rgb(248, 227, 105);
-}
-.messagetitle {
-  color: green;
-  text-align: center;
-}
-
-input {
-  border: 1px solid red ;
-  padding: 15px;
-}
-
-.messageBtn {
-  margin-bottom: 20px;
-  color: red;
-  border: 1px solid red;
-  padding: 15px 40px;
-  margin-left: 20px;
-  background-color: #fff;
-}
-
-.messageAuthor {
-  color: red;
-}
-
-.messageText {
-  border: 1px solid red;
-  padding: 10px;
-  
-  background-color: #fff;
+.app{
+    display: flex;
+    justify-content: space-between;
+    background-color: #606267;
+    border:2px solid #606267
 }
