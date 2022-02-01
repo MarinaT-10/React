@@ -1,0 +1,22 @@
+.wrapper {
+    height: 50px;
+    color: #fff;
+    background-color: #798b9b;
+    padding: 20px 10px;
+    border: 3px solid #fff;
+  }
+.header {
+  height: 100%;
+    padding-left: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    width: 30%;
+}
+
+.headerlink{
+  color: #fff;
+  text-decoration: none;
+}

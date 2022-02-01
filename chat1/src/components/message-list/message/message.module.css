@@ -1,24 +1,26 @@
-.message{ 
-    background-color: #719aa7;
-    border-radius: 5px;
-    width: 70%;
-    text-align: left;
-    min-height: 40px;
-    padding: 5px 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.message {
+  border-radius: 5px;
+  background-color: #404c57;
+  color: #fff;
+  padding: 10px;
+  width: 70%;
+  margin: auto 0 10px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-all;
 }
 
-.messageauthor {
-    color: #606267;
-    text-decoration: underline;
+.currentMessage {
+  margin: 0 0 10px auto;
+  background-color: #99a9b6;
 }
 
-.messagetext{   
-    color: #fff;    
+.message p:last-child {
+  color: #f8fbfe;
+  text-align: right;
 }
 
-.messagebox {
-    display: flex;
-    justify-content: space-between;
+.currentMessage p:last-child {
+  color: #f8fbfe;
+  text-align: right;
 }

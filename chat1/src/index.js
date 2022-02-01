@@ -1,26 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { MessageList } from './components';
-// import {List} from './components/list/list-item/list-item';
-import { MyList } from "./components"
+import React from "react";
+import { ThemeProvider, createTheme } from "@mui/material";
+import ReactDOM from "react-dom";
+import { Header } from "./components";
+import "./global.css";
 import "./palette.css";
-import styles from "./index.module.css";
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import { ChatPage, ProfilePage, HomePage} from "./pages";
 
-
-const App = () => {
-  return (
-    <div className={styles.app}>
-      <MyList />
-      <MessageList />
-    </div>
-  );
-};
-
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#0000ff",
+    },
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+    <BrowserRouter>
+        <Header />
+        <Routes>
+        <Route path="/" element={<HomePage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/chat/*" element={<ChatPage />} />         
+          <Route path="/*" element={<h1>404</h1>} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-

@@ -1,67 +1,92 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { useStyles } from "./use-styles";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useParams } from "react-router-dom";
 import { Input, InputAdornment } from "@mui/material";
 import { Send } from "@mui/icons-material";
-import { Message } from "./message/message"
+import { Message } from "./message";
+import { useStyles } from "./use-styles";
+
 
 export const MessageList = () => {
-  const styles = useStyles()
-  const [value, setValue] = useState("");
-  const [messageList, setMessageList] = useState([]);
-
+  const s = useStyles();
+  const { roomId } = useParams();
   const ref = useRef(null);
 
-  useEffect(() => {
-    ref.current?.focus()
-  }, []);
+  const [messageList, setMessageList] = useState({
+    room1: [
+      { author: "User", message: "value 1", date: new Date() },
+      { author: "Bot", message: "value 2", date: new Date() },
+    ],
+  });
+  const [value, setValue] = useState("");
 
+  const sendMessage = useCallback(
+    (message, author = "User") => {
+      if (message) {
+        setMessageList((state) => ({
+          ...state,
+          [roomId]: [
+            ...(state[roomId] ?? []),
+            { author, message, date: new Date() },
+          ],
+        }));
+        setValue("");
+      }
+    },
+    [roomId]
+  );
 
-  useEffect(() => {
-    const lastMessage = messageList[messageList.length - 1];
-    let timerId = null;
-
-    if (lastMessage?.author !== "Bot" && messageList.length > 0) {
-      timerId = setTimeout(() => {
-        setMessageList([...messageList, { author: "Bot", message: "Message from Bot" }]);
-      }, 1500);
-    }
-    return () => clearInterval(timerId)
-  }, [messageList]);
-
-  const sendMessage = () => {
-    if (value) {
-      setMessageList([...messageList, { author: "User", message: value }]);
-      setValue("");
-    } else {
-      alert("Необходимо ввести сообщение перед отправкой!")
-    }
-  }
-
-  const handlePressInput = (event) => {
-    if (event.code === "Enter") {
-      sendMessage()
+  const handlePressInput = ({ code }) => {
+    if (code === "Enter") {
+      sendMessage(value);
     }
   };
 
+  const handleScrollBottom = useCallback(() => {
+    if (ref.current) {
+      ref.current.scrollTo(0, ref.current.scrollHeight);
+    }
+  }, []);
+
+  useEffect(() => {
+    handleScrollBottom();
+  }, [messageList, handleScrollBottom]);
+
+  useEffect(() => {
+    const messages = messageList[roomId] ?? [];
+    const lastMessage = messages[messages.length - 1];
+
+    if (messages.length && lastMessage.author === "User") {
+      setTimeout(() => {
+        sendMessage("Hello from Bot", "Bot");
+      }, 500);
+    }
+  }, [messageList, roomId, sendMessage]);
+
+  const messages = messageList[roomId] ?? [];
+
   return (
-    <div className={styles.wrapper}>
+    <>
+      <div ref={ref}>
+        {messages.map((message, index) => (
+          <Message key={index} message={message} />
+        ))}
+      </div>
+
       <Input
-        className={styles.input}
+        className={s.input}
         fullWidth
-        onChange={(event) => setValue(event.target.value)}
-        onKeyPress={handlePressInput}
-        placeholder='Введите сообщение'
+        placeholder="Введите сообщение..."
         value={value}
-        inputRef={ref}
+        onChange={(e) => setValue(e.target.value)}
+        onKeyPress={handlePressInput}
         endAdornment={
-          value && <InputAdornment position="end">
-            <Send className={styles.icon}
-              onClick={sendMessage} />
-          </InputAdornment>}
+          <InputAdornment position="end">
+            {value && (
+              <Send onClick={() => sendMessage(value)} className={s.icon} />
+            )}
+          </InputAdornment>
+        }
       />
-      {messageList.map((message, index) => (
-        <Message message={message} key={index} />
-      ))}
-    </div>
-  )
-}
+    </>
+  );
+};
