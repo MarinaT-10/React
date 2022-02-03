@@ -1,23 +1,19 @@
 import React from "react";
-import { ThemeProvider, createTheme } from "@mui/material";
 import ReactDOM from "react-dom";
+import {Provider} from "react-redux";
 import { Header } from "./components";
-import "./global.css";
-import "./palette.css";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import { ChatPage, ProfilePage, HomePage} from "./pages";
+import { CustomThemeProvider } from "./theme-context";
+import { store } from "./store";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#0000ff",
-    },
-  },
-});
+import "./global.css";
+import "./palette.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    <Provider store={store}>
+    <CustomThemeProvider>
     <BrowserRouter>
         <Header />
         <Routes>
@@ -27,7 +23,8 @@ ReactDOM.render(
           <Route path="/*" element={<h1>404</h1>} />
         </Routes>
       </BrowserRouter>
-    </ThemeProvider>
+    </CustomThemeProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

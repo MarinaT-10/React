@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import styles from "./message.module.css";
-import { format} from 'date-fns'
+import { format} from 'date-fns';
 
 export function Message({ message }) {
-  format(new Date(2014, 1, 11), 'MM/dd/yyyy')
+
   return (
     <div
       className={classNames(styles.message, {
