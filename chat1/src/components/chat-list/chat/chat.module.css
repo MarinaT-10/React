@@ -1,0 +1,18 @@
+.icon,
+.text {
+  color: #fff;
+  text-decoration: none;
+}
+
+.text span {
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.description {
+  width: 100%;  
+}
+
+.description .text:last-child {
+  text-align: right;
+}
