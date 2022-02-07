@@ -1,3 +1,2 @@
-export const INCREMENT  = "increment";
-export const DECREMENT  = "decrement";
-export const TOGGLE_VISIBLE_PROFILE = "toggle Visible Profile"
+export const TOGGLE_VISBLE_PROFILE = "@profile/togпle visible profile";
+export const UPDATE_PROFILE = "@profile/update profile";

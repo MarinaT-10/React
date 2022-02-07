@@ -5,9 +5,7 @@ import { useSelector, } from "react-redux";
 
 export function Header() {
   const state = useSelector (state => state);
-  
-  console.log("state", state)
-  return (
+    return (
     <div className={styles.wrapper}>
       
       <div className={styles.header}>
