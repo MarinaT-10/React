@@ -9,10 +9,7 @@ export const ProfilePage = ({ someProp = "test" }) => {
   const [count, setCount] = useState(0);
   const { isVisibleProfile, firstName, lastName, ...profile } =
     useSelector(fullProfileSelector);
-  // const getConversations = useCallback(
-  //   (state) => conversationsSelector(someProp)(state),
-  //   [someProp]
-  // );
+
   const getConversations = useMemo(
     () => conversationsSelector(someProp),
     [someProp]

@@ -5,6 +5,7 @@ const initialState = {
 };
 
 export const conversationsReducer = (state = initialState, action) => {
+  console.log("conversationsReducer");
   switch (action.type) {
     case CREATE_CONVERSATION:
       return {

@@ -3,6 +3,9 @@ import { SEND_MESSAGE, DELETE_MESSAGE_BY_ID } from "./types";
 export const sendMessage = (roomId, message) => ({
   type: SEND_MESSAGE,
   payload: { roomId, message },
+  // meta:{
+  //   delay: 2000,
+  // }
 });
 
 export const deleteMessage = (roomId, messageId) => ({

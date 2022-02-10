@@ -11,6 +11,7 @@ const initialState = {
 };
 
 export const messagesReducer = (state = initialState, action) => {
+  console.log ("messagesReducer")
   switch (action.type) {
     case SEND_MESSAGE:
       return {
