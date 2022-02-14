@@ -13,6 +13,7 @@ export function Header() {
         <Link className={styles.headerlink} to="/">Главная</Link>
         <Link className={styles.headerlink} to="/chat">Чат</Link>
         <Link className={styles.headerlink} to="/profile">Профиль</Link>
+        <Link className={styles.headerlink} to="/gists">Gists</Link>
       </div>
     </div>
   );

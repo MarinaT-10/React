@@ -1,8 +1,21 @@
 .wrapper {
-    height: 80vh;
-    background-color: #a2bfc9;
-    color: #fff;
-    padding: 20px;
-    font-size: 36px;
-    text-align: center;
+  min-height: 80vh;
+  background-color: #a2bfc9;
+  color: #fff;
+  padding: 20px;
+  font-size: 36px;
+  text-align: center;
+}
+
+.gist {
+  font-size: 14px;
+  text-align: left;
+  margin-top: 40px;
+  padding: 5px;
+}
+
+.input {
+  color: #9a9fa1;
+  padding: 10px 15px;
+  font-size: 15px;
 }

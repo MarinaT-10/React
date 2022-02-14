@@ -4,7 +4,7 @@ import {Provider} from "react-redux";
 import { PersistGate } from 'redux-persist/integration/react'
 import { Header } from "./components";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import { ChatPage, ProfilePage, HomePage} from "./pages";
+import { ChatPage, ProfilePage, HomePage, GistsPage} from "./pages";
 import { CustomThemeProvider } from "./theme-context";
 import { store, persistor } from "./store";
 
@@ -21,7 +21,8 @@ ReactDOM.render(
         <Routes>
         <Route path="/" element={<HomePage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/chat/*" element={<ChatPage />} />         
+          <Route path="/chat/*" element={<ChatPage />} />        
+          <Route path="/gists" element={<GistsPage />} />   
           <Route path="/*" element={<h1>404</h1>} />
         </Routes>
       </BrowserRouter>
