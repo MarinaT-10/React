@@ -1,0 +1,38 @@
+.message {
+  border-radius: 5px;
+  background-color: #404c57;
+  color: #fff;
+  padding: 10px;
+  width: 70%;
+  margin: auto 0 10px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-all;
+  position: relative;
+  
+}
+
+.currentMessage {
+  margin: 0 0 10px auto;
+  background-color: #99a9b6;
+}
+
+.message p:last-child {
+  color: #f8fbfe;
+  text-align: right;
+}
+
+.currentMessage p:last-child {
+  color: #f8fbfe;
+  text-align: right;
+}
+
+.button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.text {
+  font-size: 16px;
+}
