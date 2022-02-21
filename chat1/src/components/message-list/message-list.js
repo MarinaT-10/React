@@ -6,6 +6,7 @@ import { Send } from "@mui/icons-material"
 import {
   messagesSelectorByRoomId,
   sendMessageWithBot,
+  sendMessageFB
 } from "../../store/messages";
 import { Message } from "./message";
 import { useStyles } from "./use-styles";
@@ -24,7 +25,7 @@ export const MessageList = () => {
     (message, author = "User") => {
       if (message) {
         dispatch(
-          sendMessageWithBot(roomId, { author: author || "Bot", message })
+          sendMessageFB(roomId, { author: author || "Bot", message })
         );
         setValue("");
       }
@@ -47,16 +48,6 @@ export const MessageList = () => {
   useEffect(() => {
     handleScrollBottom();
   }, [messages, handleScrollBottom]);
-
-  // useEffect(() => {
-  //   const lastMessage = messages[messages.length - 1];
-
-  //   if (messages.length && lastMessage.author === "User" ) {
-  //     setTimeout(() => {
-  //       send("Hello from Bot", "Bot");
-  //     }, 500);
-  //   }
-  // }, [messages, roomId, send]);
 
 
   return (

@@ -5,7 +5,7 @@ class Request {
         this.request = axios.create({
             baseURL: "https://api.github.com"
         });
-        this.token = token;// ключ, позволяющий серверу идентифицировать пользоателя
+        this.token = token;// ключ, позволяющий серверу идентифицировать пользователя
     }
 
     get = (url) => {

@@ -15,7 +15,11 @@ const dispatch = useDispatch();
       <p>From: {message.author}</p> <hr/>
       <button className={styles.button} onClick={()=>dispatch(deleteMessage(roomId, message?.id))}>x</button>
       <p className={styles.text}>{message.message}</p>      
-      <div><p className="date">{format (new Date(message?.date), "d.M.yyyy HH:mm:ss")}</p></div>
+      {message?.date ? (
+        <p className="date">{format(new Date(message.date), "yyyy-MM-dd HH:MM:SS")}</p>
+      ) : (
+        <p className="date">yyyy-MM-dd</p>
+      )}
       
     </div>
   );

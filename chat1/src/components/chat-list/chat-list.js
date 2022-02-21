@@ -34,14 +34,15 @@ export const ChatList = () => {
     <List component="nav">
       <button className={styles.btn} onClick={createConversationByName }>Создать новый чат</button>
       {conversations.map((chat) => (
-        <Link key={chat} to={`/chat/${chat}`}>
-          <Chat 
-          title={chat} 
-          selected={roomId === chat}
-          deleteConversationByName={deleteConversationByName}
+        <Link key={chat.title} to={`/chat/${chat.title}`}>
+          <Chat
+            title={chat.title}
+            selected={roomId === chat.title}
+            deleteConversationByName={deleteConversationByName}
           />
         </Link>
       ))}
+
     </List>
   );
 };
