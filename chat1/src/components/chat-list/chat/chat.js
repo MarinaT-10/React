@@ -1,5 +1,7 @@
 import { ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { AccountCircle } from "@mui/icons-material";
 import styles from "./chat.module.css";
 
@@ -18,6 +20,8 @@ const useStyles = makeStyles(() => {
 
 export function Chat({ title, selected, handleListItemClick, deleteConversationByName, }) {
   const s = useStyles();
+  const navigate = useNavigate();
+  const state = useSelector((s) => s);
 
   return (
     <ListItem
@@ -25,6 +29,7 @@ export function Chat({ title, selected, handleListItemClick, deleteConversationB
       button={true}
       selected={selected}
       onClick={handleListItemClick}
+      data-testid="wrapper"
     >
       <ListItemIcon>
 

@@ -64,3 +64,6 @@ export const messagesReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+// const state = messagesReducer({}, action)
+// state.toEqual({})
